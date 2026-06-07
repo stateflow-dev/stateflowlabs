@@ -735,6 +735,25 @@ section { position: relative; z-index: 1; }
 }
 .pricing-btn--featured:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(45,212,191,0.3); }
 
+.os-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.os-win   { background: rgba(0,120,212,0.15); color: #4fc3f7; border: 1px solid rgba(0,120,212,0.3); }
+.os-win::before   { content: '⊞'; font-size: 11px; }
+.os-mac   { background: rgba(180,180,180,0.1); color: #c0c0c0; border: 1px solid rgba(180,180,180,0.25); }
+.os-mac::before   { content: ''; font-size: 11px; }
+.os-linux { background: rgba(255,180,0,0.1);  color: #ffc107; border: 1px solid rgba(255,180,0,0.25); }
+.os-linux::before { content: '🐧'; font-size: 11px; }
+
 .pricing-micro {
   font-family: var(--mono);
   font-size: 11px;
@@ -1458,7 +1477,9 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
           <li><span class="feat-check">✓</span> 1 developer</li>
           <li><span class="feat-check">✓</span> Unlimited projects</li>
           <li><span class="feat-check">✓</span> scan · fix · verify · restore</li>
-          <li><span class="feat-check">✓</span> Windows, macOS, Linux</li>
+          <li><span class="feat-check">✓</span> Windows 10 · 11</li>
+          <li><span class="feat-check">✓</span> macOS 10.15 Catalina and later</li>
+          <li><span class="feat-check">✓</span> Linux Ubuntu 20.04 and later</li>
           <li><span class="feat-check">✓</span> Lifetime license</li>
         </ul>
         <a href="#" class="pricing-btn pricing-btn--primary" target="_blank">Get Solo — $19</a>
@@ -1475,7 +1496,9 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
           <li><span class="feat-check">✓</span> Up to 5 developers</li>
           <li><span class="feat-check">✓</span> Unlimited projects</li>
           <li><span class="feat-check">✓</span> scan · fix · verify · restore</li>
-          <li><span class="feat-check">✓</span> Windows, macOS, Linux</li>
+          <li><span class="feat-check">✓</span> Windows 10 · 11</li>
+          <li><span class="feat-check">✓</span> macOS 10.15 Catalina and later</li>
+          <li><span class="feat-check">✓</span> Linux Ubuntu 20.04 and later</li>
           <li><span class="feat-check">✓</span> Priority email support</li>
         </ul>
         <a href="#" class="pricing-btn pricing-btn--featured" target="_blank">Get Team — $49</a>
@@ -1499,8 +1522,8 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
         License key by email
       </div>
       <div class="trust-item">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        7-day refund guarantee
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No subscription · Pay once · Use forever
       </div>
     </div>
 
