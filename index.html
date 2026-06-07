@@ -64,6 +64,8 @@ nav {
 .nav-links { display: flex; gap: 2rem; list-style: none; justify-self: center; }
 .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--text-muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
 .nav-links a:hover { color: var(--green); }
+.nav-enc { color: var(--green) !important; }
+.nav-new { font-size: 9px; padding: 1px 5px; border-radius: 3px; background: rgba(45,212,191,0.12); border: 1px solid rgba(45,212,191,0.3); letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; margin-left: 3px; }
 .nav-gh { justify-self: end; font-family: var(--mono); font-size: 12px; color: var(--green); border: 1px solid var(--border-bright); padding: 6px 16px; border-radius: 4px; text-decoration: none; transition: background 0.2s; }
 .nav-gh:hover { background: var(--green-glow); }
 section { position: relative; z-index: 1; }
@@ -80,7 +82,9 @@ section { position: relative; z-index: 1; }
 .section-label { font-family: var(--mono); font-size: 11px; color: var(--green); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
 .section-title { font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 800; color: var(--text); margin-bottom: 1rem; letter-spacing: -0.02em; }
 .section-desc { color: var(--text-muted); font-size: 17px; max-width: 520px; margin-bottom: 4rem; }
-.sdk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.sdk-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+.sdk-card--tool { border-color: rgba(45,212,191,0.15); }
+.sdk-tier--tool { background: rgba(45,212,191,0.06); border-color: rgba(45,212,191,0.15); color: var(--green-dim); }
 .sdk-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 2.5rem; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; }
 .sdk-card:hover { border-color: var(--border-bright); background: var(--bg3); }
 .sdk-card.featured { border-color: rgba(45,212,191,0.25); }
@@ -329,7 +333,7 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
 .exp-results li::before { content: '✓'; color: var(--green); font-size: 11px; flex-shrink: 0; }
 .exp-footer { font-family: var(--mono); font-size: 10.5px; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 0.9rem; letter-spacing: 0.08em; display: flex; align-items: center; gap: 6px; margin-top: auto; }
 .exp-footer::before { content: '○'; color: var(--green); font-size: 9px; }
-@media (max-width: 900px) { .exp-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .exp-grid { grid-template-columns: 1fr; } .sdk-grid { grid-template-columns: 1fr 1fr; } }
 
 .built-public { padding: 5rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg2); }
 .built-public-inner { max-width: 680px; margin: 0 auto; text-align: center; }
@@ -370,6 +374,7 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
     <li><a href="#compare">Compare</a></li>
     <li><a href="#experiments">Experiments</a></li>
     <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="encoding-doctor.html" class="nav-enc">enc-doctor <span class="nav-new">tool</span></a></li>
   </ul>
   <a href="https://github.com/stateflow-dev" class="nav-gh" target="_blank">GitHub →</a>
 </nav>
@@ -454,10 +459,31 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
       </div>
     </div>
 
+    <div class="sdk-card sdk-card--tool reveal reveal-delay-2">
+      <span class="sdk-tier sdk-tier--tool">Utility Tool · CLI</span>
+      <div class="sdk-name">encoding-doctor</div>
+      <div class="sdk-tagline">File Encoding Scanner & Repair</div>
+      <p class="sdk-desc">Scan, fix, and verify file encoding issues across your entire project in one command. Automatically detects and repairs Mojibake, BOM, CRLF, null bytes, mixed encodings, and JSON/YAML corruption — no config needed.</p>
+      <div class="sdk-features">
+        <span class="sdk-feat">Mojibake fixer</span>
+        <span class="sdk-feat">BOM remover</span>
+        <span class="sdk-feat">CRLF normalizer</span>
+        <span class="sdk-feat">Null byte cleaner</span>
+        <span class="sdk-feat">Encoding detector</span>
+        <span class="sdk-feat">No config needed</span>
+      </div>
+      <div class="sdk-meta">
+        <span>Python 3.8+</span>
+        <span>CLI tool</span>
+        <span>MIT</span>
+      </div>
+      <div class="sdk-actions" style="margin-top:auto;display:flex;gap:0.75rem;flex-wrap:wrap">
+        <a href="encoding-doctor.html" class="btn-primary">Docs & Pricing</a>
+      </div>
+    </div>
+
   </div>
 </section>
-
-<section class="compare" id="compare">
   <div class="compare-inner reveal">
     <p class="section-label">// side by side</p>
     <h2 class="section-title">Which one is right for you?</h2>
@@ -726,6 +752,7 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
     <a href="https://github.com/stateflow-dev" target="_blank">GitHub</a>
     <a href="https://github.com/stateflow-dev/algogent-runtime" target="_blank">ALGOgent</a>
     <a href="https://github.com/stateflow-dev/adaptive-runtime" target="_blank">Adaptive Runtime</a>
+    <a href="encoding-doctor.html">encoding-doctor</a>
     <a href="https://www.linkedin.com/in/stateflow-labs-734795412" target="_blank">LinkedIn</a>
   </div>
 </footer>
