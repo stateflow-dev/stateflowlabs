@@ -48,7 +48,7 @@ enc-doctor fix    ./my_project
 enc-doctor verify ./my_project
 ```
 
-**Python 3.9+ · Windows · macOS · Linux · MIT**
+**Python 3.9+ · Windows · macOS · Linux**
 
 📄 [Docs & Pricing](https://stateflow-dev.github.io/stateflowlabs/encoding-doctor.html)
 
