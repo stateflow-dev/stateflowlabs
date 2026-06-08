@@ -1387,7 +1387,7 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
     <div class="who-card reveal reveal-delay-1">
       <div class="who-card-title">Teams mixing Windows + Linux + macOS</div>
       <div class="who-card-desc">One developer on Windows pushes CRLF. Another on Linux sees red lines in every diff. encoding-doctor normalizes the whole project in one command.</div>
-      <div class="who-card-example">// Cross-platform teams, remote work, open source contributors</div>
+      <div class="who-card-example">// Cross-platform dev teams, remote work, freelancers working across machines</div>
     </div>
 
     <div class="who-card reveal">
@@ -1610,8 +1610,8 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
 
     <div class="caution-card reveal reveal-delay-1">
       <div class="caution-card-num">02</div>
-      <div class="caution-card-title">Backups are not guaranteed</div>
-      <div class="caution-card-body">Test on a copy of your project or in a Git branch before running on your main codebase.</div>
+      <div class="caution-card-title">Back up your project folder first</div>
+      <div class="caution-card-body">enc-doctor creates per-file .bak backups automatically. But also back up the entire folder with xcopy (Windows) or cp -r (macOS/Linux) before running fix for extra safety.</div>
     </div>
 
     <div class="caution-card reveal reveal-delay-2">
@@ -1668,7 +1668,7 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
         <div class="step-num">03</div>
         <div>
           <div class="step-title">Review the report</div>
-          <div class="step-desc">Read what was found. Each issue is explained with file path, line number, and the type of corruption detected.</div>
+          <div class="step-desc">Read what was found. Each issue is listed with file path, issue type, and occurrence count. Understand what will change before proceeding.</div>
         </div>
       </div>
       <div class="how-step reveal">
