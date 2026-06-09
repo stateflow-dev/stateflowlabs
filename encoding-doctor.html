@@ -2016,7 +2016,7 @@ const STEPS = [
   {
     cmd: 'enc-doctor verify C:\\Users\\use-doctor\\Downloads\\example_project',
     assistBefore: 'Last step — <strong>verify</strong> checks every file is valid UTF-8 and safe to commit. Always run this after fixing. Press <strong>Enter ↵</strong>.',
-    assistAfter: '✓ <strong>All 7/7 files pass.</strong> Project is clean and safe to commit. That\'s the complete enc-doctor workflow — install → activate → help → scan → backup → dry-run → fix → verify. <code>pip install encoding-doctor</code>',
+    assistAfter: '✓ <strong>All 7/7 files pass.</strong> Project is clean and safe to commit. Optional: once you have committed and are sure everything is correct, clean up .bak files with <code>del /s /q *.bak</code> (Windows) or <code>find . -name "*.bak" -delete</code> (macOS/Linux). That\'s the complete enc-doctor workflow — install → activate → scan → backup → dry-run → fix → verify.',
     output: [
       { text: '', cls: 'wc-default' },
       { text: 'VERIFY REPORT', cls: 'wc-bold' },
