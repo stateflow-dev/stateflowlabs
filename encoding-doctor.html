@@ -1367,20 +1367,21 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
 
 .diff-line {
   display: grid;
-  grid-template-columns: 30px 30px 16px 1fr;
+  grid-template-columns: 24px 24px 14px 1fr;
   align-items: baseline;
   padding: 1px 0;
+  min-width: 0;
 }
 .diff-line.diff-del { background: rgba(248,81,73,0.07); }
 .diff-line.diff-add { background: rgba(63,185,80,0.07); }
 .diff-line.diff-ctx { background: transparent; }
 
 .diff-ln, .diff-ln-empty {
-  font-size: 10.5px; color: rgba(107,144,128,0.45);
-  padding: 0 4px; text-align: right; user-select: none;
-  min-width: 30px;
+  font-size: 10px; color: rgba(107,144,128,0.45);
+  padding: 0 3px; text-align: right; user-select: none;
+  min-width: 24px;
 }
-.diff-ln-empty { min-width: 30px; }
+.diff-ln-empty { min-width: 24px; }
 
 .diff-marker {
   font-size: 11px; font-weight: 700; text-align: center; user-select: none;
@@ -1391,8 +1392,9 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
 .diff-ctx .diff-marker { color: transparent; }
 
 .diff-code {
-  padding: 0 12px 0 4px; color: #cdd9d1; font-size: 11.5px;
-  white-space: pre; overflow: hidden; text-overflow: ellipsis;
+  padding: 0 10px 0 4px; color: #cdd9d1; font-size: 11px;
+  white-space: pre-wrap; word-break: break-all;
+  min-width: 0; overflow: hidden;
 }
 .diff-str { color: #a8d5a2; }
 .diff-comment { color: #6b9080; }
@@ -1902,11 +1904,8 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
 
         <div class="realout-diff">
           <div class="realout-diff-header">
-            <span class="realout-diff-range">@@ -15,12 +15,12 @@ def process(self, event: dict):</span>
+            <span class="realout-diff-range">@@ -18,18 @@ def process(self, event: dict):</span>
           </div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">15</span><span class="diff-ln">15</span><span class="diff-code">    etype = event.get(<span class="diff-str">&quot;type&quot;</span>, <span class="diff-str">&quot;unknown&quot;</span>)</span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">16</span><span class="diff-ln">16</span><span class="diff-code"></span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">17</span><span class="diff-ln">17</span><span class="diff-code">    <span class="diff-comment"># Separator dengan mojibake</span></span></div>
           <div class="diff-line diff-del">
             <span class="diff-ln">18</span><span class="diff-ln-empty"></span>
             <span class="diff-marker">&#8722;</span>
@@ -1917,11 +1916,6 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
             <span class="diff-marker">+</span>
             <span class="diff-code">    logger.info(<span class="diff-str">&quot;<span class="diff-clean">&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552;</span>&quot;</span>)</span>
           </div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">19</span><span class="diff-ln">19</span><span class="diff-code"></span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">20</span><span class="diff-ln">20</span><span class="diff-code">    self.count += 1</span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">21</span><span class="diff-ln">21</span><span class="diff-code">    logger.info(<span class="diff-str">&quot;Processing: %s&quot;</span>, etype)</span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">22</span><span class="diff-ln">22</span><span class="diff-code"></span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">23</span><span class="diff-ln">23</span><span class="diff-code">    <span class="diff-comment"># Arrow corrupt</span></span></div>
           <div class="diff-line diff-del">
             <span class="diff-ln">24</span><span class="diff-ln-empty"></span>
             <span class="diff-marker">&#8722;</span>
@@ -1932,8 +1926,6 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
             <span class="diff-marker">+</span>
             <span class="diff-code">    <span class="diff-comment"># Flow: input <span class="diff-clean">&#8594;</span> process <span class="diff-clean">&#8594;</span> output</span></span>
           </div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">25</span><span class="diff-ln">25</span><span class="diff-code"></span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">26</span><span class="diff-ln">26</span><span class="diff-code">    <span class="diff-kw">return</span> {<span class="diff-str">&quot;status&quot;</span>: <span class="diff-str">&quot;ok&quot;</span>, <span class="diff-str">&quot;count&quot;</span>: self.count}</span></div>
         </div>
 
         <div class="realout-card-footer">
@@ -1987,9 +1979,6 @@ footer { border-top: 1px solid var(--border); padding: 3rem 4rem; display: flex;
             <span class="diff-marker">+</span>
             <span class="diff-code"><span class="diff-clean">[database]</span></span>
           </div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">2</span><span class="diff-ln">2</span><span class="diff-code">host = localhost</span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">3</span><span class="diff-ln">3</span><span class="diff-code">port = 5432</span></div>
-          <div class="diff-line diff-ctx"><span class="diff-ln">4</span><span class="diff-ln">4</span><span class="diff-code">name = mydb</span></div>
         </div>
 
         <div class="realout-crlf-block">
