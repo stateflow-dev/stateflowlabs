@@ -2732,7 +2732,7 @@ const STEPS = [
   {
     cmd: 'enc-doctor verify C:\\Users\\use-doctor\\Downloads\\example_project',
     assistBefore: 'Last step — <strong>verify</strong> checks every file is valid UTF-8 and safe to commit. Always run this after fixing. Press <strong>Enter ↵</strong>.',
-    assistAfter: '✓ <strong>All 12/12 files pass.</strong> Safe to commit. Remove backups when done: <code>del /s /q *.bak</code> (Windows) or <code>find . -name "*.bak" -delete</code> (macOS/Linux).',
+    assistAfter: '✓ <strong>All 12/12 files pass.</strong> Safe to commit. <strong>Optional:</strong> once committed to GitHub, you can remove the .bak backups. Always <code>cd</code> into the project folder first, then delete — never run a wildcard delete from a parent folder. Windows: <code>cd C:\\path\\to\\project</code> then <code>del /s *.bak</code>. macOS/Linux: <code>cd /path/to/project</code> then <code>find . -name "*.bak" -delete</code>.',
     output: [
       { text: '', cls: 'wc-default' },
       { text: 'VERIFY REPORT', cls: 'wc-bold' },
